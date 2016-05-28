@@ -20,3 +20,8 @@ rake db:create
 - rake db:migrate
 
 *scaffolded Snippet*
+
+- rails g scaffold Comment user:references snippet:references text:text
+- rake db:migrate
+
+*scaffolded Comment*
