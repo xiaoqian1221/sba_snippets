@@ -1,4 +1,5 @@
 class SnippetsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_snippet, only: [:show, :edit, :update, :destroy]
 
   # GET /snippets
@@ -25,6 +26,7 @@ class SnippetsController < ApplicationController
   # POST /snippets.json
   def create
     @snippet = Snippet.new(snippet_params)
+    @snippet.user = current_user
 
     respond_to do |format|
       if @snippet.save

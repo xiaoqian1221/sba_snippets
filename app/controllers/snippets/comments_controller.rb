@@ -1,31 +1,33 @@
 class Snippets::CommentsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_snippet
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
 
-  # GET /comments
-  # GET /comments.json
+  # GET /snippets/1/comments
+  # GET snippets/1/comments.json
   def index
     @comments = @snippet.comments
   end
 
-  # GET /comments/1
-  # GET /comments/1.json
+  # GET /snippets/1/comments/1
+  # GET /snippets/1/comments/1.json
   def show
   end
 
-  # GET /comments/new
+  # GET /snippets/1/comments/new
   def new
     @comment = @snippet.comments.build
   end
 
-  # GET /comments/1/edit
+  # GET /snippets/1/comments/1/edit
   def edit
   end
 
-  # POST /comments
-  # POST /comments.json
+  # POST /snippets/1/comments
+  # POST /snippets/1/comments.json
   def create
     @comment = @snippet.comments.build(comment_params)
+    @comment.user = current_user
 
     respond_to do |format|
       if @comment.save
@@ -38,8 +40,8 @@ class Snippets::CommentsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /comments/1
-  # PATCH/PUT /comments/1.json
+  # PATCH/PUT /snippets/1/comments/1
+  # PATCH/PUT /snippets/1/comments/1.json
   def update
     respond_to do |format|
       if @comment.update(comment_params)
@@ -52,8 +54,8 @@ class Snippets::CommentsController < ApplicationController
     end
   end
 
-  # DELETE /comments/1
-  # DELETE /comments/1.json
+  # DELETE /snippets/1/comments/1
+  # DELETE /snippets/1/comments/1.json
   def destroy
     @comment.destroy
     respond_to do |format|
@@ -74,6 +76,6 @@ class Snippets::CommentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def comment_params
-      params.require(:comment).permit(:user_id, :snippet_id, :text)
+      params.require(:comment).permit(:snippet_id, :text)
     end
 end
