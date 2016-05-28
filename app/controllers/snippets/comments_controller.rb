@@ -57,7 +57,7 @@ class Snippets::CommentsController < ApplicationController
   # DELETE /snippets/1/comments/1
   # DELETE /snippets/1/comments/1.json
   def destroy
-    @comment.destroy
+    @comment.destroy if @comment.user == current_user
     respond_to do |format|
       format.html { redirect_to comments_url, notice: 'Comment was successfully destroyed.' }
       format.json { head :no_content }

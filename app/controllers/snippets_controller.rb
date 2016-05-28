@@ -56,10 +56,17 @@ class SnippetsController < ApplicationController
   # DELETE /snippets/1
   # DELETE /snippets/1.json
   def destroy
-    @snippet.destroy
-    respond_to do |format|
-      format.html { redirect_to snippets_url, notice: 'Snippet was successfully destroyed.' }
-      format.json { head :no_content }
+    if @snippet.user == current_user
+      @snippet.destroy
+      respond_to do |format|
+        format.html { redirect_to snippets_url, notice: 'Snippet was successfully destroyed.' }
+        format.json { head :no_content }
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to snippets_url, alert: 'Only author may destroy a snippet' }
+        format.json { head :no_content }
+      end
     end
   end
 
