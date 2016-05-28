@@ -15,3 +15,8 @@ rake db:create
 -rake db:seed
 
 *devise User*
+
+- rails g scaffold Snippet title code:text user:references
+- rake db:migrate
+
+*scaffolded Snippet*
