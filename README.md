@@ -27,3 +27,7 @@ rake db:create
 *scaffolded Comment*
 
 *removed scaffold.scss and rename application.css to application.scss*
+
+- bundle
+
+*bootstrap & font-awesome*
