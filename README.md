@@ -25,3 +25,5 @@ rake db:create
 - rake db:migrate
 
 *scaffolded Comment*
+
+*removed scaffold.scss and rename application.css to application.scss*
