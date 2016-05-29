@@ -31,3 +31,17 @@ rake db:create
 - bundle
 
 *bootstrap & font-awesome*
+
+*recommended nesting technique and has many association*
+
+*user reference logic and authentication*
+
+*secure snippet & comment destroy*
+
+- rails g model Language
+- rake db:migrate
+- rake db:seed
+- rails g migration AddLanguageToSnippets
+- rake db:migrate
+
+*generated Languages, seeded and snippet association*
