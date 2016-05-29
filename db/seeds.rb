@@ -13,4 +13,14 @@ languages = [
   { name: "Bash", image_url: "http://www.unixstickers.com/image/cache/data/stickers/binbash/Bash-new.sh-600x600.png" }
 ]
 
-languages.each { |language| pp Language.find_or_create_by(language) }
+languages.each do |language|
+  pp instance_variable_set("@#{language[:name].gsub(' ', '_').downcase}", Language.find_or_create_by(language))
+end
+
+snippets = [
+  { title: "Hello World", code: "console.log('Hello World')", language: @javascript, user: user }
+]
+
+snippets.each do |snippet|
+  pp Snippet.find_or_create_by(snippet)
+end

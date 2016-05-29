@@ -1,1 +1,1 @@
-<%= f.select :language Language.map(&:name) %>
+<%= f.select :language_id, [["Choose Language", nil]] + Language.all.map { |language| [language.name, language.id, title: language.image_url, class: 'ms-dropdown-option'] }, {}, { class: 'ms-dropdown' } %>

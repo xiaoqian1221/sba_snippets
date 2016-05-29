@@ -37,6 +37,9 @@ gem 'devise'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 
+# https://github.com/kristianmandrup/ms-dropdown-rails
+gem 'ms-dropdown-rails'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

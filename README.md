@@ -45,3 +45,7 @@ rake db:create
 - rake db:migrate
 
 *generated Languages, seeded and snippet association*
+
+- bundle
+
+*ms-dropdown setup and more seed logic*
