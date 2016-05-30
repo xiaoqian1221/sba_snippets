@@ -1,4 +1,3 @@
 require "resque/tasks"
 
-task "reque:setup" => :environment
-  
+task "resque:setup" => :environment
