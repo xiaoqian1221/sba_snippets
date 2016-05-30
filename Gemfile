@@ -44,7 +44,18 @@ gem 'sweetalert-rails'
 # https://github.com/mois3x/sweet-alert-rails-confirm
 gem 'sweet-alert-confirm'
 
+gem 'resque'
+
+gem 'searchkick'
+gem 'twitter-typeahead-rails'
+
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
+
 group :development, :test do
+  gem 'coderay'
+  gem 'pygments.rb'
+  gem 'uv'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 end
