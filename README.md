@@ -1,5 +1,7 @@
 # SBA Snippets
 
+### https://sba-snippets.herokuapp.com/
+
 rails new sba_snippets -d mysql
 
 *init*
@@ -53,3 +55,11 @@ rake db:create
 - bundle
 
 *adds styles, layout, partials and final touches*
+
+- heroku create
+- bundle --without production
+- git push heroku master
+- heroku run rake db:migrate
+- heroku run rake db:seed
+
+*heroku ready*
