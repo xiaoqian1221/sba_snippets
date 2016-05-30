@@ -49,6 +49,29 @@ header + #flash {
   }
 }
 
+.text-center {
+  text-align: center;
+}
+
 .default-form {
   width: 50%;
+}
+
+.login-form {
+  width: 25%;
+}
+
+@media (max-width: 767px) {
+  .default-form {
+    width: 100%;
+  }
+  .login-form {
+    width: 50%;
+  }
+}
+
+@media (max-width: 500px) {
+  .login-form {
+    width: 100%;
+  }
 }

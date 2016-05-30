@@ -3,5 +3,5 @@ $(document).on 'ready page:load', ->
     $('#flash').fadeOut ->
       $(this).remove()
     return
-  ), 5000
+  ), 10000
   return

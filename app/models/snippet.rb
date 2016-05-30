@@ -4,4 +4,6 @@ class Snippet < ActiveRecord::Base
   has_many :comments, -> { order(updated_at: :desc) }
 
   validates_presence_of :user, :language, :title, :code
+
+  scope :latest, -> { order(updated_at: :desc) }
 end

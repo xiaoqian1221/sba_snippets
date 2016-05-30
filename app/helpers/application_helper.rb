@@ -3,10 +3,8 @@ module ApplicationHelper
     case flash_type
       when /success/
         "alert-success"
-      when /error/
-        "alert-error"
-      when /alert/
-        "alert-block"
+      when /error/, /alert/
+        "alert-danger"
       when /notice/
         "alert-info"
       else
