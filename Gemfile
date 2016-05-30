@@ -52,10 +52,11 @@ gem 'twitter-typeahead-rails'
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
 
+gem 'coderay'
+gem 'pygments.rb'
+gem 'uv'
+
 group :development, :test do
-  gem 'coderay'
-  gem 'pygments.rb'
-  gem 'uv'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 end

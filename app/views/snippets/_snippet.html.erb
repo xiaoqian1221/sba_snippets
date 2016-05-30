@@ -3,7 +3,7 @@
     <h3 class="inline"><%= snippet.title %></h3>
     <h5 class="inline"><%= render snippet.language %></h5>
   </div>
-  <pre><%= snippet.code %></pre>
+  <%= CodeRay.scan(snippet.code, snippet.language.name).div.html_safe %>
   <small class="snippet-author"><i><%= snippet.user.email %></i></small>
   <div class="comments-summary">
     <% if snippet.comments.any? %>
