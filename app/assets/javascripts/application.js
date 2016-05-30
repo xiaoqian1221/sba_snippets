@@ -15,4 +15,15 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require jquery.dd.min
+//= require sweetalert
+//= require sweet-alert-confirm
 //= require_tree .
+
+$(document).on('keyup', 'input', function(e){
+  if(e.keyCode == 13)
+    $(this).trigger("enter")
+})
+
+jQuery.fn.enter = function(handler) {
+  $(this).on('enter', handler)
+}

@@ -49,3 +49,7 @@ rake db:create
 - bundle
 
 *ms-dropdown setup and more seed logic*
+
+- bundle
+
+*adds styles, layout, partials and final touches*

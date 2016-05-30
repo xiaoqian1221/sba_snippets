@@ -11,6 +11,7 @@ class SnippetsController < ApplicationController
   # GET /snippets/1
   # GET /snippets/1.json
   def show
+    @comments = @snippet.comments
   end
 
   # GET /snippets/new

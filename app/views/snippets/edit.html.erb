@@ -1,6 +1,6 @@
-<h1>Editing Snippet</h1>
+<h1 class="page-header">Editing Snippet</h1>
 
-<%= render 'form' %>
+<%= render 'form', submit: { text: "Update Snippet" } %>
 
-<%= link_to 'Show', @snippet %> |
-<%= link_to 'Back', snippets_path %>
+<%= link_to 'Show', @snippet, class: 'btn btn-default' %>
+<%= link_to 'Back', snippets_path, class: 'btn btn-default' %>

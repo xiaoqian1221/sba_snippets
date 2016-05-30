@@ -1,0 +1,6 @@
+<% unless comment.new_record? %>
+  <blockquote class="comment">
+    <div class="comment-text"><%= comment.text %></div>
+    <small><i><%= comment.user.email %></i></small>
+  </blockquote>
+<% end %>

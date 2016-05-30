@@ -1,4 +1,4 @@
-class Snippets::CommentsController < ApplicationController
+class CommentsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_snippet
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
@@ -31,10 +31,10 @@ class Snippets::CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
+        format.html { redirect_to @comment.snippet, notice: 'Comment was successfully created.' }
         format.json { render :show, status: :created, location: @comment }
       else
-        format.html { render :new }
+        format.html { render @comment.snippet }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
     end
@@ -45,10 +45,10 @@ class Snippets::CommentsController < ApplicationController
   def update
     respond_to do |format|
       if @comment.update(comment_params)
-        format.html { redirect_to @comment, notice: 'Comment was successfully updated.' }
+        format.html { redirect_to @comment.snippet, notice: 'Comment was successfully updated.' }
         format.json { render :show, status: :ok, location: @comment }
       else
-        format.html { render :edit }
+        format.html { render @comment.snippet }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
     end

@@ -11,12 +11,44 @@
  * file per style scope.
  *
  *= require ms-dropdown/dd
+ *= require sweetalert
  *= require_tree .
  *= require_self
  */
 
- @import "bootstrap-sprockets";
- @import "bootstrap";
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
- @import "font-awesome-sprockets";
- @import "font-awesome";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+textarea {
+  resize: vertical;
+}
+
+#flash {
+  border-radius: 0;
+}
+
+header + #flash {
+  margin-top: -20px;
+}
+
+.inline {
+  display: inline;
+}
+
+.footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  background-color: #f5f5f5;
+  margin-top: 100px;
+  p {
+    margin: 10px 0;
+  }
+}
+
+.default-form {
+  width: 50%;
+}

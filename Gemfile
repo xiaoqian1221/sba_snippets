@@ -39,6 +39,10 @@ gem 'font-awesome-sass'
 
 # https://github.com/kristianmandrup/ms-dropdown-rails
 gem 'ms-dropdown-rails'
+# https://github.com/sharshenov/sweetalert-rails
+gem 'sweetalert-rails'
+# https://github.com/mois3x/sweet-alert-rails-confirm
+gem 'sweet-alert-confirm'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

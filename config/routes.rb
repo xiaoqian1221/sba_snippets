@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users
   root 'snippets#index'
+
+  devise_for :users
+
   resources :snippets do
-    resources :comments, controller: 'snippets/comments'
+    resources :comments
   end
+  
 end

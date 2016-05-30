@@ -1,0 +1,21 @@
+<blockquote cite="<%= snippet.user.email %>">
+  <div class="page-header">
+    <h3 class="inline"><%= snippet.title %></h3>
+    <h5 class="inline"><%= render snippet.language %></h5>
+  </div>
+  <pre><%= snippet.code %></pre>
+  <small class="snippet-author"><i><%= snippet.user.email %></i></small>
+  <div class="comments-summary">
+    <% if snippet.comments.any? %>
+        <i><%= snippet.comments.count %> Comments</i>
+    <% else %>
+        <i>No comments yet!</i>
+    <% end %>
+    <%= render partial: 'comments/new', object: snippet, as: :snippet %>
+  </div>
+  <%= link_to 'Show', snippet, class: 'btn btn-default' %>
+  <% if snippet.user == current_user %>
+    <%= link_to icon('cog', 'Edit'), edit_snippet_path(snippet), class: 'btn btn-primary' %>
+    <%= link_to icon('trash', 'Delete'), snippet, method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure?' } %>
+  <% end %>
+</blockquote>
