@@ -5,6 +5,9 @@ Rails.application.routes.draw do
 
   resources :snippets do
     resources :comments, only: [:create]
+    collection do
+      get :autocomplete
+    end
   end
 
 end

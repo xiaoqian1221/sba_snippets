@@ -1,4 +1,12 @@
 class Snippet < ActiveRecord::Base
+  searchkick
+
+  def search_data
+    {
+      title: title,
+      language: language.name
+    }
+  end
 
   belongs_to :user
   belongs_to :language
@@ -11,5 +19,5 @@ class Snippet < ActiveRecord::Base
   include Elasticsearch::Model
   include Elasticsearch::Model::Callbacks
 
-  searchkick
+
 end
