@@ -1,8 +1,8 @@
-<%= form_tag({ url: snippets_path }, { class: 'navbar-form book-search-form', method: :get, remote: true }) do |f| %>
+<%= form_tag({ url: snippets_path }, { class: 'navbar-form snippet-search-form', method: :get, remote: true }) do |f| %>
   <div class="input-group margin-bottom-sm">
     <span class="input-group-addon">
       <i class="fa fa-search fa-fw"></i>
     </span>
-    <%= text_field_tag :query, params[:query], class: 'form-control typeahead book-search', placeholder: 'Search' %>
+    <%= text_field_tag :query, params[:query], class: 'form-control typeahead snippet-search', placeholder: 'Search' %>
   </div>
 <% end %>

@@ -6,4 +6,6 @@ class Snippet < ActiveRecord::Base
   validates_presence_of :user, :language, :title, :code
 
   scope :latest, -> { order(updated_at: :desc) }
+
+  searchkick
 end
