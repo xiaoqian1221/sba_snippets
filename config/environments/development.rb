@@ -43,14 +43,15 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.perform_deliveries = true
-  config.action_mailer.delivery_method =  :smtp
-  config.action_mailer.smtp_settings = {
+  config.action_mailer.default :charset => "utf-8"
+  ActionMailer::Base.delivery_method =  :smtp
+  ActionMailer::Base.smtp_settings = {
     #:address => "localhost", :port => 1025
-    :address              => "smtp.gmail.com",
+    :address              => "smtp.sendgrid.net",
     :port                 => 587,
-    :user_name            => Rails.application.secrets.gmail_username,
-    :password             => Rails.application.secrets.gmail_password,
-    :domain               => "gmail.com",
+    :domain               => "sbasnippets.herokuapp.com",
+    :user_name            => ENV["SENDGRID_USERNAME"], #Rails.application.secrets.gmail_username,
+    :password             => ENV["SENDGRID_PASSWORD"], #Rails.application.secrets.gmail_password,
     :authentication       => "plain",
     :enable_starttls_auto => true
   }

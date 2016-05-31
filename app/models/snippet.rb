@@ -10,7 +10,7 @@ class Snippet < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :language
-  has_many :comments, -> { order(updated_at: :desc) }
+  has_many :comments, -> { order(updated_at: :desc) }, dependent: :destroy  
 
   validates_presence_of :user, :language, :title, :code
 
