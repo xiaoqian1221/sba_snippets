@@ -31,7 +31,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        Resque.enqueue(MailSender, @comment.id)
+        #Resque.enqueue(MailSender, @comment.id)
         format.html { redirect_to @comment.snippet, notice: 'Comment was successfully created.' }
         format.json { render :show, status: :created, location: @comment }
       else

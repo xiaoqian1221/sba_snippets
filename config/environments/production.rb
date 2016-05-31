@@ -87,4 +87,7 @@ Rails.application.configure do
     :authentication       => "plain",
     :enable_starttls_auto => true
   }
+
+  # Bonsai URL for production
+  Elasticsearch::Model.client = Elasticsearch::Client.new url: ENV['BONSAI_URL']
 end
